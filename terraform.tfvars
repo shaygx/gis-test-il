@@ -19,7 +19,7 @@ ingress_rules = [
   }
 ]
 
-subnet_ids   = ["subnet-057dd1db78ad239b2", "subnet-042545b810a1a4e55"]
+#subnet_ids   = ["subnet-057dd1db78ad239b2", "subnet-042545b810a1a4e55"]
 region       = "il-central-1"
 
 #tgw_id     = "tgw-0430826c231550bf5"
@@ -29,4 +29,31 @@ transit_gateway_vpc_attachment = {
        tgw_id     = "tgw-0430826c231550bf5" 
 #       subnet_ids = ["subnet-0cf6f7d1c30a00612", "subnet-08cb635201da8cf97"]
 }
+
+
+route_table_names = [
+  "RTB-GIS-Test-Private",
+  "RTB-GIS-Test-Public",
+  "RTB-GIS-Test-RDS",
+  "RTB-GIS-Test-TGWA"
+]
+
+
+#route_table_names = ["RTB-GIS-Test-Private", "RTB-GIS-Test-Public", "RTB-GIS-Test-RDS", "RTB-GIS-Test-TGWA"]
+
+
+subnet_ids = [
+   "subnet-042545b810a1a4e55", "subnet-057dd1db78ad239b2",
+   "subnet-04e0fb597aa9e19c1", "subnet-07312fba78d9aab8e",
+   "subnet-0ca76635703d30ff4", "subnet-0977cd851a493798d",
+   "subnet-0cf6f7d1c30a00612", "subnet-08cb635201da8cf97"
+]
+
+route_table_subnet_map = {
+  "RTB-GIS-Test-Private" = ["subnet-042545b810a1a4e55", "subnet-057dd1db78ad239b2"] 
+  "RTB-GIS-Test-Public" = ["subnet-04e0fb597aa9e19c1", "subnet-07312fba78d9aab8e"]
+  "RTB-GIS-Test-RDS" = ["subnet-0ca76635703d30ff4", "subnet-0977cd851a493798d"]
+  "RTB-GIS-Test-TGWA" = ["subnet-0cf6f7d1c30a00612", "subnet-08cb635201da8cf97"]
+}
+
 

@@ -40,3 +40,18 @@ resource "aws_subnet" "tgwa_subnets" {
     }
   )
  }
+
+
+resource "aws_subnet" "rds_subnets" {
+  count                  = length(var.subnet_rds_cidrs)
+  vpc_id                 = aws_vpc.main.id
+  cidr_block             = var.subnet_rds_cidrs[count.index]
+  availability_zone      = var.rds_availability_zones[count.index]
+
+  tags = merge(
+    var.subnet_rds_tags,
+    {
+      Name = var.subnet_rds_names[count.index]
+    }
+   )
+}

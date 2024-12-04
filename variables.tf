@@ -127,6 +127,53 @@ variable "subnet_tgwa_tags" {
  }
 }
 
+
+variable "subnet_rds_cidrs" {
+        type = list(string)
+        description = "rds subnets"
+        default = ["10.131.7.0/24", "10.131.8.0/24"]
+}
+
+variable "subnet_rds_names" {
+  type    = list(string)
+  default = ["subnet-gis-test-rds-az1", "subnet-gis-test-rds-az2"]  # Define custom names
+}
+
+variable "rds_availability_zones" {
+        type = list(string)
+        description = "AZS"
+        default = ["il-central-1a", "il-central-1b"]
+}
+
+
+variable "subnet_rds_tags" {
+  description = "Tags for the subnets"
+  type        = map(string)
+  default     = {
+
+    Environment = "Test"
+ }
+
+}
+
+#variable "route_table_id" {
+#  description = "Tags to apply to the new route table"
+#  type        = map(string)
+#}
+
+
+variable "route_table_names" {
+  description = "List of route table names"
+  type        = list(string)
+}
+
+variable "route_table_subnet_map" {
+  description = "A map of route table names to their associated subnet IDs"
+  type        = map(list(string))
+}
+
+
+
 variable "role_name" {
    description = "The name of the SSM IAM role"
    type        = string
@@ -188,8 +235,8 @@ variable "egress_rules" {
 
 
 variable "subnet_ids" {
-  description = "The IDs of the subnets where endpoints should be deployed"
-  type        = list(string)
+   description = "The IDs of the subnets where endpoints should be deployed"
+   type        = list(string)
 }
 
 
