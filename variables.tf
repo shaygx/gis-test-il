@@ -5,7 +5,7 @@ variable "vpc_cidr_block" {
 }
 
 variable "vpc_id" {
-  description = "vpc-0cc788fc3cc7b533c"
+  description = "vpc-0804656fbcbfa78cf"
   type        = string
 }
 
@@ -162,15 +162,15 @@ variable "subnet_rds_tags" {
 #}
 
 
-variable "route_table_names" {
-  description = "List of route table names"
-  type        = list(string)
-}
+#variable "route_table_names" {
+# description = "List of route table names"
+#  type        = list(string)
+#}
 
-variable "route_table_subnet_map" {
-  description = "A map of route table names to their associated subnet IDs"
-  type        = map(list(string))
-}
+#variable "route_table_subnet_map" {
+#  description = "A map of route table names to their associated subnet IDs"
+#  type        = map(list(string))
+#}
 
 
 
@@ -197,6 +197,11 @@ variable "max_session_duration" {
   description = "The maximum session duration for the IAM role in seconds"
   type        = number
   default     = 14400  # Default to 4 hour
+}
+
+variable "security_group_ids" {
+  type      = list(string)
+  default   = ["sg-0dc36b82e7306e3b7"]
 }
 
 variable "security_group_name" {
@@ -237,6 +242,7 @@ variable "egress_rules" {
 variable "subnet_ids" {
    description = "The IDs of the subnets where endpoints should be deployed"
    type        = list(string)
+   default     = ["subnet-0c362b393708ec1a1", "subnet-0562cde526444a353"]
 }
 
 
@@ -251,5 +257,4 @@ variable "ssm_endpoint_types" {
   type        = list(string)
   default     = ["ssm", "ssmmessages", "ec2messages"]
 }
-
 

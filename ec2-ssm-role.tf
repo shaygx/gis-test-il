@@ -25,11 +25,11 @@ resource "aws_iam_role_policy_attachment" "ssm_managed_policy_attachment" {
 }
 
 # Create an instance profile for the SSM role (if needed for EC2)
- resource "aws_iam_instance_profile" "ssm_instance_profile" {
-   name = var.instance_profile_name
-   role = aws_iam_role.ssm_role.name 
+resource "aws_iam_instance_profile" "ssm_instance_profile" {
+  name = var.instance_profile_name
+  role = aws_iam_role.ssm_role.name 
 
- }
+}
 
 # Output the role's ARN
 output "ssm_role_arn" {

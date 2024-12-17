@@ -1,0 +1,31 @@
+
+resource "aws_instance" "testayalongis" {
+  ami           = "ami-004a80a23384ff183"
+  instance_type = "m5.2xlarge"
+  vpc_security_group_ids = ["sg-0dc36b82e7306e3b7"]
+  subnet_id = "subnet-0c362b393708ec1a1"
+  iam_instance_profile = var.instance_profile_name
+  tags = {
+    Name = "testayalongis"
+  }
+}
+
+
+resource "aws_instance" "testayalongishw" {
+  ami           = "ami-023defec50064c177"
+  instance_type = "m5.xlarge"
+  vpc_security_group_ids = ["sg-0dc36b82e7306e3b7"]
+  subnet_id = "subnet-0562cde526444a353"
+  iam_instance_profile = var.instance_profile_name
+  tags = {
+    Name = "testayalongishw"
+  }
+}
+
+resource "aws_ec2_instance_metadata_defaults" "enforce-imdsv2" {
+  http_tokens                 = "required"
+  http_put_response_hop_limit = 2
+  instance_metadata_tags    = "enabled"
+  http_endpoint             = "enabled"
+}
+
