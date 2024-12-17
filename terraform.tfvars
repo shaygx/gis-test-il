@@ -1,4 +1,4 @@
-vpc_id = "vpc-0cc788fc3cc7b533c"
+vpc_id = "vpc-0804656fbcbfa78cf"
 #igw_name = "mk-igw"
 #tags = {
 #  Environment = "Dev"
@@ -31,29 +31,30 @@ transit_gateway_vpc_attachment = {
 }
 
 
-route_table_names = [
-  "RTB-GIS-Test-Private",
-  "RTB-GIS-Test-Public",
-  "RTB-GIS-Test-RDS",
-  "RTB-GIS-Test-TGWA"
-]
+#route_table_names = [
+#  "RTB-GIS-Test-Private",
+#  "RTB-GIS-Test-Public",
+#  "RTB-GIS-Test-RDS",
+#  "RTB-GIS-Test-TGWA"
+#]
 
 
 #route_table_names = ["RTB-GIS-Test-Private", "RTB-GIS-Test-Public", "RTB-GIS-Test-RDS", "RTB-GIS-Test-TGWA"]
 
 
-subnet_ids = [
-   "subnet-042545b810a1a4e55", "subnet-057dd1db78ad239b2",
-   "subnet-04e0fb597aa9e19c1", "subnet-07312fba78d9aab8e",
-   "subnet-0ca76635703d30ff4", "subnet-0977cd851a493798d",
-   "subnet-0cf6f7d1c30a00612", "subnet-08cb635201da8cf97"
-]
+#subnet_ids = [
+#   "subnet-0c362b393708ec1a1", "subnet-0562cde526444a353",
+#   "subnet-04e0fb597aa9e19c1", "subnet-07312fba78d9aab8e",
+#   "subnet-0ca76635703d30ff4", "subnet-0977cd851a493798d",
+#   "subnet-0cf6f7d1c30a00612", "subnet-08cb635201da8cf97"
+#]
 
-route_table_subnet_map = {
-  "RTB-GIS-Test-Private" = ["subnet-042545b810a1a4e55", "subnet-057dd1db78ad239b2"] 
-  "RTB-GIS-Test-Public" = ["subnet-04e0fb597aa9e19c1", "subnet-07312fba78d9aab8e"]
-  "RTB-GIS-Test-RDS" = ["subnet-0ca76635703d30ff4", "subnet-0977cd851a493798d"]
-  "RTB-GIS-Test-TGWA" = ["subnet-0cf6f7d1c30a00612", "subnet-08cb635201da8cf97"]
-}
+#route_table_subnet_map = {
+#  "RTB-GIS-Test-Private" = ["subnet-042545b810a1a4e55", "subnet-057dd1db78ad239b2"] 
+#  "RTB-GIS-Test-Public" = ["subnet-04e0fb597aa9e19c1", "subnet-07312fba78d9aab8e"]
+#  "RTB-GIS-Test-RDS" = ["subnet-0ca76635703d30ff4", "subnet-0977cd851a493798d"]
+#  "RTB-GIS-Test-TGWA" = ["subnet-0cf6f7d1c30a00612", "subnet-08cb635201da8cf97"]
+#}
+
 
 
