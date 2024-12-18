@@ -258,3 +258,7 @@ variable "ssm_endpoint_types" {
   default     = ["ssm", "ssmmessages", "ec2messages"]
 }
 
+
+
+
+

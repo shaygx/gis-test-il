@@ -57,4 +57,3 @@ transit_gateway_vpc_attachment = {
 #}
 
 
-
